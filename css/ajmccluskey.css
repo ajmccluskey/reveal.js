@@ -1,0 +1,8 @@
+.reveal figcaption {
+	font-size: 50%;
+}
+
+/* .reveal .roll set to "top" which makes caption links go superscript */
+.reveal figcaption .roll {
+	vertical-align: middle;
+}
