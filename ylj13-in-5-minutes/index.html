@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>My YOW! Lambda Jam in 5 Minutes</title>
+
+		<meta name="description" content="My YOW! Lambda Jam in 5 Minutes">
+		<meta name="author" content="Andrew McCluskey">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../css/reveal.min.css">
+		<link rel="stylesheet" href="../css/theme/night.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Andrew's custom styles -->
+		<link rel="stylesheet" href="../css/ajmccluskey.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="../css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h2>My YOW! Lambda Jam 2013 in 5 Minutes</h2>
+					<p>
+						<small>I'm this guy -> <a href="http://twitter.com/ajmacca">@ajmacca</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>YOW! Lambda Jam?</h2>
+					<p>
+						<ul>
+						  <li>FP Conference</li>
+						  <li>May 16 and 17 in Brisbane</li>
+						  <li>Predominantly Haskell, Clojure, and Scala</li>
+						  <li>More details <a href="http://www.yowconference.com.au/lambdajam/">on the web</a></li>
+						  <div style="text-align:center"><img alt="crowd at day 1 keynote" src="img/yow-crowd.jpg" /></div>
+						</ul>
+					</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h1>Day 1</h1>
+					</section>
+					<section>
+						<h2>Keynote - Do Extraterrestrials use FP?</h2>
+						<ul>
+						  <li>Manuel Chakravarty (<a href="http://twitter.com/TacticalGrace">@TacticalGrace</a>) </li>
+						  <li>Curry-Howard correspondence -> "Alonzo Church didn't invent the lambda calculus; he <em>discovered</em> it."</li>
+						  <li>We should apply focus on properties (purity, immutability) to our methodology as well as languages</li>
+						  <li>See the <a href="https://speakerdeck.com/mchakravarty/do-extraterrestrials-use-functional-programming">slides</a> for more</li>
+						  <figure style="text-align:center">
+							<img alt="Manuel delivering his keynote" src="img/manuel-keynote.jpg" />
+							<figcaption>Original image courtesy of <a title="Original tweet containing image" href="https://twitter.com/smithcdau/status/334818879350132736">@smithcdau</a></figcaption>
+						  </figure>
+						</ul>
+					</section>
+					<section>
+						<h2>Forcing FP on New Developers in a New Company</h2>
+						<ul>
+						  <li>Michael Neale (<a href="http://twitter.com/michaelneale">@michaelneale</a>) - cofounder of <a href="http://www.cloudbees.com/">CloudBees</a></li>
+						  <li>Composable Microservices as part of PaaS in the Cloud</li>
+						  <li>Didn't seem to be much forcing</li>
+						  <li><a href="http://lambdaunderpants.com/">LAMBDA UNDERPANTS</a></li>
+						  <figure style="float: right">
+							<img alt="lambda underpants!" src="img/lambdaunderpants.jpg" />
+							<figcaption>Original image courtesy of <a title="Tweet containing original image" href="https://twitter.com/leonardo_borges/status/334835917867085824">@leonardo_borges</a></figcaption>
+						  </figure>
+						  <div style="float: clear"></div>
+						</ul>
+					</section>
+					<section>
+						<h2>Promoting FP in the Enterprise</h2>
+						<ul>
+						  <li>Korny Sietsma (<a href="http://twitter.com/kornys">@kornys</a>) had pretty graphs</li>
+						  <li>More detailed account of parallel language experiment from previous Meetup</li>
+						  <li>Java vs Scala vs Clojure. Clojure won</li>
+						  <figure style="text-align:center">
+							<img alt="Korny showing his pretty graphs" src="img/korny-graph.jpg" />
+							<figcaption>Original image courtesy of <a title="Tweet containing original image" href="https://twitter.com/michaelneale/status/334840677152198657">@michaeleneale</a></figcaption>
+						  </figure>
+					</section>
+					<section>
+					  <h2>Optional Clojure Type Checking</h2>
+					  <ul>
+						<li>Honours project of Ambrose Bonnaire-Sergeant (<a href="http://twitter.com/ambrosebs">@ambrosebs</a>)</li>
+						<li>Clojure type checking via a library - inspired by typed Racket</li>
+						<li>Can play with it now - <a href="https://github.com/clojure/core.typed">https://github.com/clojure/core.typed</a></li>
+						<pre><code class="clojure">
+(clojure.core.typed/ann v t) ; gives var v the static type t.
+(clojure.core.typed/ann-form f t) ; ensures form f is of the static type t.
+(clojure.core.typed/check-ns) ; type checks the current namespace.
+(clojure.core.typed/cf t) ; type checks the form t.
+						</code></pre>
+					</section>
+					<section>
+					  <h2>Clojure Macro Jam</h2>
+					  <ul>
+						<li>Run by organiser of <a href="http://www.meetup.com/clj-syd/">clj-syd</a> - Leonardo Borges <br/>(<a href="http://twitter.com/leonardo_borges">@leonardo_borges</a>)
+						<li>Quick intro to macros + challenges to work through</li>
+						<div style="text-align:center">
+						  <img style="width:150%; height:150%" alt="leo tweet - macro code is coming" src="img/leo-macro-tweet.png" />
+						</div>
+					  </ul>
+					</section>
+					<section>
+					  <h2>Practical Parallel Array Fusion with Repa</h2>
+					  <ul>
+						<li><a href="http://www.cse.unsw.edu.au/~benl/">Ben Lippmeier of UNSW</a> made pictures in Haskell</li>
+						<li>Used <a href="http://hackage.haskell.org/package/repa">Repa</a> for fast numeric arrays - ray tracing</li>
+						<li>Too smart for me - check his page for details and slides</li>
+						<div style="text-align:center"><img alt="Haskell doing ray tracing" src="img/ylj13-repa-ray-tracing.png" /></div>
+					  </ul>
+					</section>
+					<section>
+					  <h2>Lightening Talks</h2>
+					  <ul>
+						<p>Nothing that really piqued my interest other than Katie Miller <br/>(<a href="">@codemiller</a>)
+						  discussing just how underrepresented women are in FP.  She's started
+						  <a href="http://www.lambdaladies.com/">lambdaladies.com</a> to help encourage more ladies to
+						  get involved in FP.</p>
+					  </ul>
+					</section>
+					<section>
+					  <img alt="Day 1 drinks at the Normanby" src="img/yow-drinks.gif" />
+					</section>
+				</section>
+
+				<section>
+				  <section>
+					<h1>Day 2</h1>
+				  </section>
+				  <section>
+					<h2>Keynote - Data, Visibility, and Abstraction</h2>
+					<ul>
+					  <li>Stuart Sierra (<a href="http://twitter.com/stuartsierra">@stuartsierra</a>) - member of Clojure/core at Relevance</li>
+					  <li>"Clojure is the bastard child of Haskell and Common Lisp"</li>
+					  <li>Covered Stuart's road to Clojure, with a bit of a Clojure intro</li>
+					</ul>
+				  </section>
+				  <section>
+					<h2>Connection Management, FP Style: A Case Study</h2>
+					<ul>
+					  <li>Jed Wesley-Smith (<a href="http://twitter.com/jedws">@jedws</a>) from Atlassian</li>
+					  <li>From imperative to Monad Transformers</li>
+					  <li>Smart guy talk - I don't know monads yet - see <a href="https://bitbucket.org/jwesleysmith/connection-mgmt">slides</a> (they look good)</li>
+					  <li>Take away for me was lots of upfront thought and effort to make problem go away was worth it.</li>
+					</ul>
+				  </section>
+				  <section>
+					<h2>Taming Asynchronous Workflows with FRP</h2>
+					<ul>
+					  <li>Another talk by <a href="http://twitter.com/leonardo_borges">@leonardo_borges</a></li>
+					  <li>Reactive processing of event stream in Clojurescript using <a title="RxJS on Github" href="https://github.com/Reactive-Extensions/RxJS">RxJS</a></li>
+					  <li>Removes the need for state: observe event stream -> offset + zip to compare previous and current</li>
+					  <li><a href="http://www.slideshare.net/borgesleonardo/functional-reactive-programming-in-clojurescript">Slides</a> and <a href="https://github.com/leonardoborges/frp-code">code</a> available online</li>
+					</ul>
+				  </section>
+				  <section>
+					<h2>Haskell in Production: 12 Months Building ApiEngine</h2>
+					<ul>
+					  <li><a title="Greg's homepage" href="http://www.netstorm.net.au/">Greg Davis</a> and <a title="Mark's homepage" href="http://mth.io/">Mark Hibberd</a> (<a title="Mark on Twitter" href="http://twitter.com/markhibberd">@markhibberd</a>)</li>
+					  <li></li>
+					  <li></li>
+					  <li><a title="Presentation slides" href="http://mth.io/talks/haskell-in-production">Slides</a> available online</li>
+					</ul>
+				  </section>
+				  <section>
+					<h2></h2>
+					<ul>
+					  <li></li>
+					  <li></li>
+					  <li></li>
+					  <li></li>
+					</ul>
+				  </section>
+				</section>
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: '../plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: '../plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
